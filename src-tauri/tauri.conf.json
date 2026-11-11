@@ -1,0 +1,41 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "Restorix",
+  "version": "1.0.0",
+  "identifier": "app.restorix.recovery",
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "devUrl": "http://localhost:1420",
+    "beforeBuildCommand": "npm run build",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "label": "main",
+        "title": "Restorix",
+        "width": 1440,
+        "height": 880,
+        "minWidth": 1040,
+        "minHeight": 660
+      }
+    ],
+    "security": {
+      "csp": null,
+      "assetProtocol": {
+        "enable": true,
+        "scope": ["$TEMP/restorix-preview/**", "$TEMP/**/restorix-preview/**"]
+      }
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "category": "Utility",
+    "shortDescription": "Recover deleted files",
+    "longDescription": "Restorix finds and restores deleted files from NTFS, FAT, exFAT, HFS+ and APFS disks, the Recycle Bin / Trash, snapshots, and by carving photos and videos.",
+    "icon": ["icons/32x32.png", "icons/128x128.png", "icons/128x128@2x.png", "icons/icon.icns", "icons/icon.ico"],
+    "macOS": { "minimumSystemVersion": "11.0" },
+    "windows": { "webviewInstallMode": { "type": "downloadBootstrapper" } }
+  }
+}
